@@ -1,5 +1,5 @@
 # Pull the Node image from Docker Hub
-FROM node:16
+FROM node:14-slim
 
 # Create a directory where our app will be placed
 RUN mkdir -p /ui
@@ -8,13 +8,13 @@ RUN mkdir -p /ui
 WORKDIR /ui
 
 # Copy dependency definitions
-COPY package.json /ui
+COPY package.json ./
 
 # Install dependecies
 RUN npm install
 
 # Get all the code needed to run the app
-COPY . /ui
+COPY . .
 
 # Expose the port the app runs in
 EXPOSE 4200

@@ -2,8 +2,10 @@
 # Pull the Node image from Docker Hub
 FROM node:16
 
+RUN mkdir -p /api
+
 # Change directory so that our commands run inside this new directory
-WORKDIR /usr/src/api
+WORKDIR /api
 
 # Copy dependency definitions
 COPY package*.json ./
