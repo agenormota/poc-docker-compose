@@ -111,21 +111,18 @@ export class tb_testeComponent implements OnInit, OnDestroy {
         });
     }
 
-    deleteDialog(tb_teste: Tb_teste) {
+    async deleteDialog(tb_teste: Tb_teste) {
         const dialogData = new ConfirmDialogModel("Really delete?", tb_teste._id.toString());
         const dialogRef = this.dialog.open(ConfirmDialogComponent, {
             width: "400px",
             data: dialogData
         });
 
-        dialogRef.afterClosed().subscribe(remove => {
+         dialogRef.afterClosed().subscribe(async (remove) => {
             if (remove) {
-                this.tb_testeApiService.deletetb_teste(tb_teste._id).subscribe(() => {
-                    this.getAlltb_testes();
-                    this.notificationsService.showNotification('Success', 'Tb_teste deleted successfully', 'success');
-                }, (err) => {
-                    this.notificationsService.showNotification('Error', err.message, 'warning');
-                });
+                await this.tb_testeApiService.deletetb_teste(tb_teste._id);
+                this.getAlltb_testes();
+                this.notificationsService.showNotification('Success', 'Tb_teste deleted successfully', 'success');
             }
         });
     }

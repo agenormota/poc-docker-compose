@@ -18,18 +18,15 @@
               <thead>
                 <tr>
                  <td>_id</td>
-<td>Name</td>
-
+                 <td>Name</td>
                   <th class="text-right" data-orderable="false" data-priority="2">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                <tr *ngFor="let dto1 of dtos">
-                
+                <tr *ngFor="let dto1 of dtos">              
 
-                   <td>{{dto1['_id']}}</td>
- <td>{{dto1['Name']}}</td>
-
+                  <td>{{dto1['_id']}}</td>
+                  <td>{{dto1['name']}}</td>
                   <td class="text-right">
                     <a href="javascript:void(0)" (click)="editDialog(dto1)"
                       class="btn btn-link btn-warning btn-just-icon edit">

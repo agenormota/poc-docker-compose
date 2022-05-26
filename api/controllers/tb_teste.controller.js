@@ -2,7 +2,9 @@ let tb_teste = require('../models/tb_teste.model');
 
 
 exports.deletetb_teste = (req, res) => {
-    let id = req.params._id;
+    const id = req.params.id;
+    console.log(JSON.stringify(req.params));
+    console.log(id);
    
     if (!id) {
         res.status(500).send('No Selected');

@@ -3,9 +3,9 @@
     <form fxLayout="column" #tb_testeForm="ngForm">
        <div fxLayout="row wrap" fxLayoutGap="30px">
            <mat-form-field fxFlex>
-                <input matInput placeholder="Name" name="Name"[(ngModel)]="tb_testeObj.Name"
-#Name="ngModel"  required  >
-            <mat-error *ngIf="Name.hasError('required')">
+                <input matInput placeholder="Name" name="name"[(ngModel)]="tb_testeObj.name"
+                #name="ngModel"  required  >
+            <mat-error *ngIf="name.hasError('required')">
                     Please enter the value..
                 </mat-error>
             </mat-form-field>

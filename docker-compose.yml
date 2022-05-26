@@ -7,9 +7,8 @@ services:
       dockerfile: Dockerfile
    ports:
     -  "4200:4200"
-   container_name: test-ui     
-  #  volumes:   
-  #   -  ./ui/src/:/ui/src/     
+   container_name: test-ui    
+     
    depends_on:
     - api 
   api:
@@ -19,8 +18,7 @@ services:
    ports:
      - "3000:3000"
    container_name: test-api   
-  #  volumes:
-  #   - "./api/:/api"
+ 
    depends_on:
     - db
   db:
