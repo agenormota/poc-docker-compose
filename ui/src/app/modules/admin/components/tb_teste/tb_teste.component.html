@@ -1,0 +1,50 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-primary card-header-icon">
+            <div class="card-icon">
+              <i class="material-icons">people_alt</i>
+            </div>
+            <h4 class="card-title float-left">tb_teste</h4>
+            <button mat-raised-button class="float-right" color="primary" style="margin-top: 10px;"
+              (click)="addDialog()">
+              Add
+            </button>
+          </div>
+          <div class="card-body">
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover" width="100%">
+              <thead>
+                <tr>
+                 <td>_id</td>
+<td>Name</td>
+
+                  <th class="text-right" data-orderable="false" data-priority="2">Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let dto1 of dtos">
+                
+
+                   <td>{{dto1['_id']}}</td>
+ <td>{{dto1['Name']}}</td>
+
+                  <td class="text-right">
+                    <a href="javascript:void(0)" (click)="editDialog(dto1)"
+                      class="btn btn-link btn-warning btn-just-icon edit">
+                      <i class="material-icons">dvr</i>
+                    </a>
+                    <a href="javascript:void(0)" (click)="deleteDialog(dto1)"
+                      class="btn btn-link btn-danger btn-just-icon remove">
+                      <i class="material-icons">close</i>
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

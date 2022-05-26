@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>tb_teste</h1>
+<div mat-dialog-content>
+    <form fxLayout="column" #tb_testeForm="ngForm">
+       <div fxLayout="row wrap" fxLayoutGap="30px">
+           <mat-form-field fxFlex>
+                <input matInput placeholder="Name" name="Name"[(ngModel)]="tb_testeObj.Name"
+#Name="ngModel"  required  >
+            <mat-error *ngIf="Name.hasError('required')">
+                    Please enter the value..
+                </mat-error>
+            </mat-form-field>
+      
+</div>
+
+
+    </form>
+</div>
+
+<div mat-dialog-actions>
+    <div fxLayout="row wrap" fxFlex fxLayoutGap="10px" fxLayoutAlign="end start">
+        <button mat-button mat-dialog-close tabindex="-1" cdkFocusInitial>Cancel</button>
+        <button mat-raised-button color="primary" [disabled]="!tb_testeForm.valid || !tb_testeForm.dirty"
+            (click)="savetb_teste(tb_testeObj)">
+            Add/Update
+        </button>
+    </div>
+</div>
